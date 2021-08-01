@@ -212,7 +212,7 @@
                                   id="label_9f7a71ce-43f8-41de-9b54-a24334fd64fd_Container">
                                   <div style="FONT-SIZE: 16.5pt;font-family:'PingFang SC',微软雅黑; COLOR: #000000;"
                                     title="" class="infoplus_control infoplus_labelControl inline"
-                                    id="label_9f7a71ce-43f8-41de-9b54-a24334fd64fd">王耀波</div><input type="hidden"
+                                    id="label_9f7a71ce-43f8-41de-9b54-a24334fd64fd">郑喆</div><input type="hidden"
                                     id="V1_CTRL32" name="fieldXM" value="201706060426">
                                 </div>
                                 <font style="FONT-SIZE: 16.5pt">&nbsp; 校园通行码&nbsp;&nbsp; </font>Campus Pass Code
@@ -259,7 +259,7 @@
                                     <div
                                       style="font-family: &quot;PingFang SC&quot;, 微软雅黑; min-height: 43px; line-height: 43px;"
                                       title="" class="infoplus_control infoplus_labelControl"
-                                      id="label_5ca90d80-b774-41cc-a5f8-18d789b99e1f">2020-09-09 00:00:00</div><input
+                                      id="start_time">2020-09-09 00:00:00</div><input
                                       type="hidden" id="V1_CTRL35" name="fieldSCSJ" value="2020-09-09 00:00:00">
                                   </div>
                                 </div>
@@ -276,7 +276,7 @@
                                     <div
                                       style="font-family: &quot;PingFang SC&quot;, 微软雅黑; min-height: 43px; line-height: 43px;"
                                       title="" class="infoplus_control infoplus_labelControl"
-                                      id="label_2da5730f-37a2-4da6-a7d8-e51dfc87d0f0">2020-09-09 23:59:59</div><input
+                                      id="end_time">2020-09-09 23:59:59</div><input
                                       type="hidden" id="V1_CTRL36" name="fieldDQSJ" value="2020-09-09 23:59:59">
                                   </div>
                                 </div>
@@ -352,7 +352,7 @@
                   value="21030:6:201706060426
 21030:14:201706060426
 21030:2:201706060426"><input type="hidden" class="infoplus_control infoplus_hiddenControl infoplus_var"
-                  id="_VAR_ACTION_REALNAME" name="_VAR_ACTION_REALNAME" value="王耀波"><input type="hidden"
+                  id="_VAR_ACTION_REALNAME" name="_VAR_ACTION_REALNAME" value="郑喆"><input type="hidden"
                   class="infoplus_control infoplus_hiddenControl infoplus_var" id="_VAR_OWNER_ORGANIZES_Names"
                   name="_VAR_OWNER_ORGANIZES_Names" value="信息工程学院"><input type="hidden"
                   class="infoplus_control infoplus_hiddenControl infoplus_var" id="_VAR_URL" name="_VAR_URL"
@@ -390,14 +390,14 @@
                   value="9"><input type="hidden" class="infoplus_control infoplus_hiddenControl infoplus_var"
                   id="_VAR_ACTION_INDEP_ORGANIZE" name="_VAR_ACTION_INDEP_ORGANIZE" value="21030"><input type="hidden"
                   class="infoplus_control infoplus_hiddenControl infoplus_var" id="_VAR_OWNER_REALNAME"
-                  name="_VAR_OWNER_REALNAME" value="王耀波"><input type="hidden"
+                  name="_VAR_OWNER_REALNAME" value="郑喆"><input type="hidden"
                   class="infoplus_control infoplus_hiddenControl infoplus_var" id="_VAR_NOW_YEAR" name="_VAR_NOW_YEAR"
                   value="2020"><input type="hidden" class="infoplus_control infoplus_hiddenControl infoplus_var"
                   id="_VAR_ACTION_INDEP_ORGANIZE_Name" name="_VAR_ACTION_INDEP_ORGANIZE_Name" value="信息工程学院"><input
                   type="hidden" class="infoplus_control infoplus_hiddenControl infoplus_var" id="_VAR_NOW"
                   name="_VAR_NOW" value="1599626510"><input type="hidden"
                   class="infoplus_control infoplus_hiddenControl infoplus_var" id="_VAR_ENTRY_NAME"
-                  name="_VAR_ENTRY_NAME" value="学生校园通行码领取_王耀波"><input type="hidden"
+                  name="_VAR_ENTRY_NAME" value="学生校园通行码领取_郑喆"><input type="hidden"
                   class="infoplus_control infoplus_hiddenControl infoplus_var" id="_VAR_ENTRY_TAGS"
                   name="_VAR_ENTRY_TAGS" value="学生事务,学生,移动端"></div>
             </div>
@@ -452,7 +452,7 @@
           }
         },
         "id": "9a300fcb-5259-11e8-b601-0050569b9b9b",
-        "name": "王耀波"
+        "name": "郑喆"
       },
       "entrusted": false
     };
@@ -801,7 +801,19 @@
   <div id="div_invoice"></div>
   <!-- <iframe id="alive" src="/infoplus/alive" style="display: none; border:0">unsupported.</iframe> -->
 
+  <script>
+    var startTime = document.getElementById('start_time')
+    var endTime = document.getElementById('end_time')
+    
+    var date = new Date()
+    var year = date.getFullYear()
+    var month = date.getMonth() + 1
+    var day = date.getDate()
 
+    var dateStr = year + '-' + month.toString().padStart(2, '0') + '-' + day.toString().padStart(2, '0')
+    startTime.innerText = dateStr + ' 00:00:00'
+    endTime.innerText = dateStr + ' 23:59:59'
+  </script>
 
 </body>
 
